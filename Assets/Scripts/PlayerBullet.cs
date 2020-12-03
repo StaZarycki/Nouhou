@@ -16,34 +16,34 @@ public class PlayerBullet : MonoBehaviour
     private float animationTimer;
 
 
-    void Awake()
+    private void Awake()
     {
         bullet = gameObject;
         spriteRenderer = bullet.GetComponent<SpriteRenderer>();
         bulletTransform = bullet.GetComponent<Transform>();
     }
 
-    void Start()
+    private void Start()
     {
         animationTimer = 0;
     }
 
-    void Update()
+    private void Update()
     {
         rotate();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         move();
     }
 
-    void OnBecameInvisible()
+    private void OnBecameInvisible()
     {
         die();
     }
 
-    void rotate()
+    private void rotate()
     {
         // Set timer for animation
         animationTimer += Time.deltaTime;
@@ -55,12 +55,12 @@ public class PlayerBullet : MonoBehaviour
         }
     }
 
-    void move()
+    private void move()
     {
         bulletTransform.Translate(Vector2.up * bulletSpeed * Time.deltaTime, Space.World);
     }
 
-    void die()
+    private void die()
     {
         Destroy(this.gameObject);
     }

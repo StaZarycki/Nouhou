@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -6868878648230590618
     second: Arrow
+  - first:
+      213: 7663605748295369997
+    second: PowerUpSmall
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -122,7 +125,7 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,6 +133,27 @@ TextureImporter:
       bones: []
       spriteID: 66743f62347dca0a0800000000000000
       internalID: -6868878648230590618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PowerUpSmall
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 552
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0589c513d89a5a60800000000000000
+      internalID: 7663605748295369997
       vertices: []
       indices: 
       edges: []

@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private float maxY;
 
 
-    void Start()
+    private void Start()
     {
         // Set initial values
         moveDirection = Vector2.zero;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         calculateCameraBoundaries();
     }
 
-    void Update()
+    private void Update()
     {
         // Draw line from player to moveDirection Vector
         Debug.DrawLine(gameObject.transform.position, new Vector2(
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position.y) + moveDirection, Color.red);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         getInputAndSetZen();
         getInputAndSetDirection();
@@ -52,14 +52,14 @@ public class PlayerController : MonoBehaviour
         movePlayer(moveDirection);
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         clampPlayerPosition();
     }
 
 
 
-    void calculateCameraBoundaries()
+    private void calculateCameraBoundaries()
     {
         // Get player bounds
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         maxY = vertExtent;
     }
 
-    void getInputAndSetDirection()
+    private void getInputAndSetDirection()
     {
         // Set vector to zero to prevent moving without pressing any key
         moveDirection = Vector2.zero;
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
             moveDirection *= slowSpeedMultiplier;
     }
 
-    void getInputAndSetZen()
+    private void getInputAndSetZen()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    void setShootType()
+    private void setShootType()
     {
         if (isZen)
         {
@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void getInputAndShoot()
+    private void getInputAndShoot()
     {
         if (Input.GetKey(KeyCode.Z) && fireInterval <= 0)
         {
@@ -170,12 +170,12 @@ public class PlayerController : MonoBehaviour
         fireInterval = Mathf.Max(0, fireInterval - Time.deltaTime);
     }
 
-    void movePlayer(Vector2 moveDirection)
+    private void movePlayer(Vector2 moveDirection)
     {
         gameObject.transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.Self);
     }
 
-    void clampPlayerPosition()
+    private void clampPlayerPosition()
     {
         gameObject.transform.position = new Vector2(
             Mathf.Clamp(gameObject.transform.position.x, minX + playerSpriteSize.x / 2, maxX - playerSpriteSize.x / 2),
