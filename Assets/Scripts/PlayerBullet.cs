@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField] float animationSpeed;
-    [SerializeField] float bulletSpeed;
-    [SerializeField] Sprite[] bulletSprites = new Sprite[4];
+    [SerializeField] private Sprite[] bulletSprites = new Sprite[4];
+
+    [SerializeField] private float animationSpeed;
+    [SerializeField] private float bulletSpeed;
     
-    GameObject bullet;
-    Transform bulletTransform;
-    SpriteRenderer spriteRenderer;
-    float animationTimer;
+    private GameObject bullet;
+    private Transform bulletTransform;
+    private SpriteRenderer spriteRenderer;
+
+    private float animationTimer;
+
 
     void Awake()
     {
@@ -42,6 +45,7 @@ public class PlayerBullet : MonoBehaviour
 
     void rotate()
     {
+        // Set timer for animation
         animationTimer += Time.deltaTime;
 
         if (animationTimer >= 1 / animationSpeed)

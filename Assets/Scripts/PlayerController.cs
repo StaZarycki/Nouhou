@@ -7,34 +7,30 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnimator;
     public GameObject bullet;
 
-    [SerializeField] float movementSpeed = 5f;
-    [SerializeField] float slowSpeedMultiplier = 0.5f;
-    [SerializeField] float fireIntervalTime = 0.1f;
+    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private float slowSpeedMultiplier = 0.5f;
+    [SerializeField] private float fireIntervalTime = 0.1f;
 
-    GameObject player;
-    Vector2 moveDirection;
-    float fireInterval;
-    bool isZen;
-    int shootType;
+    private Vector2 moveDirection;
+    private Vector2 playerSpriteSize;
+
+    private bool isZen;
+    private int shootType;
+    private float fireInterval;
 
     private float minX;
     private float minY;
     private float maxX;
     private float maxY;
 
-    private Vector2 spriteSize;
 
     void Start()
     {
-        player = gameObject;
-        spriteSize = new Vector2(
-            player.GetComponent<SpriteRenderer>().sprite.bounds.size.x,
-            player.GetComponent<SpriteRenderer>().sprite.bounds.size.y);
-
+        // Set initial values
         moveDirection = Vector2.zero;
         fireInterval = 0;
-        isZen = false;
         shootType = 0;
+        isZen = false;
 
         calculateCameraBoundaries();
     }
@@ -42,9 +38,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Draw line from player to moveDirection Vector
-        Debug.DrawLine(player.transform.position, new Vector2(
-            player.transform.position.x,
-            player.transform.position.y) + moveDirection, Color.red);
+        Debug.DrawLine(gameObject.transform.position, new Vector2(
+            gameObject.transform.position.x,
+            gameObject.transform.position.y) + moveDirection, Color.red);
     }
 
     void FixedUpdate()
@@ -65,9 +61,17 @@ public class PlayerController : MonoBehaviour
 
     void calculateCameraBoundaries()
     {
+        // Get player bounds
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        playerSpriteSize = new Vector2(
+            spriteRenderer.sprite.bounds.size.x,
+            spriteRenderer.sprite.bounds.size.y);
+
+        // Get window bounds
         float vertExtent = Camera.main.orthographicSize;
         float horzExtent = vertExtent * Screen.width / Screen.height;
 
+        // Set max and min
         minX = -horzExtent;
         maxX = horzExtent;
         minY = -vertExtent;
@@ -76,8 +80,10 @@ public class PlayerController : MonoBehaviour
 
     void getInputAndSetDirection()
     {
+        // Set vector to zero to prevent moving without pressing any key
         moveDirection = Vector2.zero;
 
+        // I'm not really proud of this part, but well
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             moveDirection += Vector2.left;
@@ -115,8 +121,10 @@ public class PlayerController : MonoBehaviour
             moveDirection += Vector2.up;
         }
 
+        // Set maximum speed to 1
         moveDirection = Vector2.ClampMagnitude(moveDirection, 1);
 
+        // Slow down if in zen mode
         if (isZen)
             moveDirection *= slowSpeedMultiplier;
     }
@@ -149,26 +157,29 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Z) && fireInterval <= 0)
         {
+            // Reset interval
             fireInterval = fireIntervalTime;
 
+            // Create new bullet and shoot
             GameObject newBullet = Instantiate(bullet);
-            newBullet.transform.position = player.transform.position;
+            newBullet.transform.position = gameObject.transform.position;
             newBullet.GetComponent<PlayerBullet>().SetImage(shootType);
         }
 
+        // Update interval
         fireInterval = Mathf.Max(0, fireInterval - Time.deltaTime);
     }
 
     void movePlayer(Vector2 moveDirection)
     {
-        player.transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.Self);
+        gameObject.transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.Self);
     }
 
     void clampPlayerPosition()
     {
-        player.transform.position = new Vector2(
-            Mathf.Clamp(player.transform.position.x, minX + spriteSize.x / 2, maxX - spriteSize.x / 2),
-            Mathf.Clamp(player.transform.position.y, minY + spriteSize.y / 2, maxY - spriteSize.y / 2));
+        gameObject.transform.position = new Vector2(
+            Mathf.Clamp(gameObject.transform.position.x, minX + playerSpriteSize.x / 2, maxX - playerSpriteSize.x / 2),
+            Mathf.Clamp(gameObject.transform.position.y, minY + playerSpriteSize.y / 2, maxY - playerSpriteSize.y / 2));
     }
 
 }
