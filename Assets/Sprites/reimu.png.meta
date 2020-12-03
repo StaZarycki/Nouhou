@@ -1,0 +1,914 @@
+fileFormatVersion: 2
+guid: 895430bc0afd62f439ec6e9a108cd5dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1970523942836839889
+    second: reimuN1
+  - first:
+      213: 6252767862861496140
+    second: reimuN2
+  - first:
+      213: 7829422707483202708
+    second: reimuN3
+  - first:
+      213: -5625649160862226170
+    second: reimuN4
+  - first:
+      213: -9184075069933839457
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_4
+  - first:
+      213: 5494879573285948570
+    second: reimuN5
+  - first:
+      213: -4204660905687714945
+    second: reimuN6
+  - first:
+      213: 8190085901657719650
+    second: reimuN7
+  - first:
+      213: 4445006804536846565
+    second: reimuN8
+  - first:
+      213: 1524150119348921297
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_9
+  - first:
+      213: -9153234840384009814
+    second: reimuL1
+  - first:
+      213: 1116526943643867322
+    second: reimuL2
+  - first:
+      213: 232902070743573228
+    second: reimuL3
+  - first:
+      213: -6262409155030665624
+    second: reimuL4
+  - first:
+      213: -922605942770409999
+    second: reimuL5
+  - first:
+      213: 3534969924063386635
+    second: reimuL6
+  - first:
+      213: -4563276808458750945
+    second: reimuL7
+  - first:
+      213: -5824974594699089459
+    second: reimuL8
+  - first:
+      213: 276495765689124964
+    second: reimuR1
+  - first:
+      213: 760276607021008850
+    second: reimuR2
+  - first:
+      213: 4501167271731983488
+    second: reimuR3
+  - first:
+      213: -9011866087754333466
+    second: reimuR4
+  - first:
+      213: -6102422756147655728
+    second: reimuR5
+  - first:
+      213: 6691010859592495756
+    second: reimuR6
+  - first:
+      213: 4126733082506327644
+    second: reimuR7
+  - first:
+      213: -1786969721503963673
+    second: reimuR8
+  - first:
+      213: -2828466014507780617
+    second: dong
+  - first:
+      213: 316401315359602800
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_27
+  - first:
+      213: -545456439335495846
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_28
+  - first:
+      213: 3664904423176188904
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_29
+  - first:
+      213: -8773343500273856537
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_30
+  - first:
+      213: 1291281003198972402
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_31
+  - first:
+      213: -6306678993132404987
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_32
+  - first:
+      213: 5036260433193429457
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_33
+  - first:
+      213: -4916473792237210834
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_34
+  - first:
+      213: -4050901494682666929
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_35
+  - first:
+      213: -6720101594139862227
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_36
+  - first:
+      213: -6461834970396002089
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_37
+  - first:
+      213: 8944282348209189985
+    second: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: reimuN1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 249
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d52132f515b85b10800000000000000
+      internalID: 1970523942836839889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuN2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 249
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f76d02e3b46c650800000000000000
+      internalID: 6252767862861496140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuN3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 249
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494d9eb6872b7ac60800000000000000
+      internalID: 7829422707483202708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuN4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 249
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60925d7e4edade1b0800000000000000
+      internalID: -5625649160862226170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuN5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 249
+        width: 22
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c4249dbdbb14c40800000000000000
+      internalID: 5494879573285948570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuN6
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 249
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f73f28bfe2b06a5c0800000000000000
+      internalID: -4204660905687714945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuN7
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 249
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2634e301cb709a170800000000000000
+      internalID: 8190085901657719650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuN8
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 249
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8ec985326dfad30800000000000000
+      internalID: 4445006804536846565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuL1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 201
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa98e29986d29f080800000000000000
+      internalID: -9153234840384009814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuL2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 202
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab89b02f653be7f00800000000000000
+      internalID: 1116526943643867322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuL3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 204
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2af1a033f6b3300800000000000000
+      internalID: 232902070743573228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuL4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 204
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8663e3c9d047719a0800000000000000
+      internalID: -6262409155030665624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuL5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 204
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd518188ce3233f0800000000000000
+      internalID: -922605942770409999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuL6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 204
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0cdc77ba6cbe0130800000000000000
+      internalID: 3534969924063386635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuL7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 203
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14b9048bebfba0c0800000000000000
+      internalID: -4563276808458750945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuL8
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 204
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc92949d778892fa0800000000000000
+      internalID: -5824974594699089459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuR1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 153
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468ccc71f6f46d300800000000000000
+      internalID: 276495765689124964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuR2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 154
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7c684cb8b0d8a00800000000000000
+      internalID: 760276607021008850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuR3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 156
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084f23219cb577e30800000000000000
+      internalID: 4501167271731983488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuR4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 156
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e283044a8b6fe280800000000000000
+      internalID: -9011866087754333466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuR5
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 155
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db0f86d5d6df4ba0800000000000000
+      internalID: -6102422756147655728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuR6
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 156
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82ba422dee3bdc50800000000000000
+      internalID: 6691010859592495756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuR7
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 156
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5674a9cfd9154930800000000000000
+      internalID: 4126733082506327644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reimuR8
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 156
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5a06d81886337e0800000000000000
+      internalID: -1786969721503963673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dong
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 137
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5bff945254fb8d0800000000000000
+      internalID: -2828466014507780617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_27
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 76
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078b978e155146400800000000000000
+      internalID: 316401315359602800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_28
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 82
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5755f422462e68f0800000000000000
+      internalID: -545456439335495846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_29
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 82
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3bc27c72b5cd230800000000000000
+      internalID: 3664904423176188904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_30
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 82
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efc1b5d192de3680800000000000000
+      internalID: -8773343500273856537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_31
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 82
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f182ec1b3d8be110800000000000000
+      internalID: 1291281003198972402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_32
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 33
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fbce5bedc2a78a0800000000000000
+      internalID: -6306678993132404987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_35
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 8
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48375d9d8e48c7c0800000000000000
+      internalID: -4050901494682666929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d7e332q-21c08b31-7ad7-49ef-a176-e776c7ca74a0_38
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 38
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1643ec72869702c70800000000000000
+      internalID: 8944282348209189985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
