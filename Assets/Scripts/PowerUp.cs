@@ -20,7 +20,7 @@ public class PowerUp : MonoBehaviour
 
     private void Update()
     {
-        animateTan();
+        AnimateTan();
         DrawDebugLine();
     }
 
@@ -37,8 +37,13 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    private void OnBecameInvisible()
+    {
+        Die();
+    }
 
-    private void animateTan()
+
+    private void AnimateTan()
     {
         // Make a tan of time function for animation and clamp it to maxSpeed
         animationTime = Mathf.Min(animationTime + Time.time * 0.01f, Mathf.PI * 0.99f);

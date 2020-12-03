@@ -30,20 +30,20 @@ public class PlayerBullet : MonoBehaviour
 
     private void Update()
     {
-        rotate();
+        Rotate();
     }
 
     private void FixedUpdate()
     {
-        move();
+        Move();
     }
 
     private void OnBecameInvisible()
     {
-        die();
+        Die();
     }
 
-    private void rotate()
+    private void Rotate()
     {
         // Set timer for animation
         animationTimer += Time.deltaTime;
@@ -55,12 +55,12 @@ public class PlayerBullet : MonoBehaviour
         }
     }
 
-    private void move()
+    private void Move()
     {
         bulletTransform.Translate(Vector2.up * bulletSpeed * Time.deltaTime, Space.World);
     }
 
-    private void die()
+    private void Die()
     {
         Destroy(this.gameObject);
     }

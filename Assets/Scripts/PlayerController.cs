@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         shootType = 0;
         isZen = false;
 
-        calculateCameraBoundaries();
+        CalculateCameraBoundaries();
     }
 
     private void Update()
@@ -45,21 +45,21 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        getInputAndSetZen();
-        getInputAndSetDirection();
-        setShootType();
-        getInputAndShoot();
-        movePlayer(moveDirection);
+        GetInputAndSetZen();
+        GetInputAndSetDirection();
+        SetShootType();
+        GetInputAndShoot();
+        MovePlayer(moveDirection);
     }
 
     private void LateUpdate()
     {
-        clampPlayerPosition();
+        ClampPlayerPosition();
     }
 
 
 
-    private void calculateCameraBoundaries()
+    private void CalculateCameraBoundaries()
     {
         // Get player bounds
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         maxY = vertExtent;
     }
 
-    private void getInputAndSetDirection()
+    private void GetInputAndSetDirection()
     {
         // Set vector to zero to prevent moving without pressing any key
         moveDirection = Vector2.zero;
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
             moveDirection *= slowSpeedMultiplier;
     }
 
-    private void getInputAndSetZen()
+    private void GetInputAndSetZen()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    private void setShootType()
+    private void SetShootType()
     {
         if (isZen)
         {
@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void getInputAndShoot()
+    private void GetInputAndShoot()
     {
         if (Input.GetKey(KeyCode.Z) && fireInterval <= 0)
         {
@@ -170,12 +170,12 @@ public class PlayerController : MonoBehaviour
         fireInterval = Mathf.Max(0, fireInterval - Time.deltaTime);
     }
 
-    private void movePlayer(Vector2 moveDirection)
+    private void MovePlayer(Vector2 moveDirection)
     {
         gameObject.transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.Self);
     }
 
-    private void clampPlayerPosition()
+    private void ClampPlayerPosition()
     {
         gameObject.transform.position = new Vector2(
             Mathf.Clamp(gameObject.transform.position.x, minX + playerSpriteSize.x / 2, maxX - playerSpriteSize.x / 2),
