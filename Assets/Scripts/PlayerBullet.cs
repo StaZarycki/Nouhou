@@ -18,6 +18,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void Awake()
     {
+        // Set initial values
         bullet = gameObject;
         spriteRenderer = bullet.GetComponent<SpriteRenderer>();
         bulletTransform = bullet.GetComponent<Transform>();

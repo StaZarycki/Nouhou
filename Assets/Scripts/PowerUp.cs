@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float speedGainMultiplier;
 
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private bool isBig;
+
+    private GameObject playerObject;
     private Vector2 movement = Vector2.down;
 
+    private float speedGainMultiplier;
     private float animationTime;
     private float speedGain;
+
+    private void Awake()
+    {
+        // Set initial values
+        speedGainMultiplier = 10;
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void Start()
     {
@@ -31,8 +41,18 @@ public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Give player more power on contact and die
         if (collision.CompareTag("Player"))
         {
+            if (isBig)
+            {
+                playerObject.GetComponent<PlayerController>().AddMorePower(10);
+            }
+            else
+            {
+                playerObject.GetComponent<PlayerController>().AddMorePower(20);
+            }
+
             Die();
         }
     }
@@ -41,6 +61,7 @@ public class PowerUp : MonoBehaviour
     {
         Die();
     }
+
 
 
     private void AnimateTan()

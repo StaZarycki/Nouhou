@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5377980424789867345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -117,12 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9857f04ed421f04088ae64ed2687be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 20
-  bulletSpeed: 10
-  playerObject: {fileID: 5278633980336107139, guid: 39adabed9ffaf1948920a51842f53a45,
-    type: 3}
   bulletSprites:
   - {fileID: -4845119555509453796, guid: 15906c78c92d6de478ec5f57d1937edf, type: 3}
   - {fileID: -6868878648230590618, guid: 15906c78c92d6de478ec5f57d1937edf, type: 3}
   - {fileID: 0}
   - {fileID: 0}
+  animationSpeed: 20
+  bulletSpeed: 10

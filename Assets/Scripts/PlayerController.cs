@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,23 +16,31 @@ public class PlayerController : MonoBehaviour
     private Vector2 playerSpriteSize;
 
     private bool isZen;
-    private int shootType;
+    private byte shootType;
     private float fireInterval;
+
+    private byte health;
+    private byte power;
 
     private float minX;
     private float minY;
     private float maxX;
     private float maxY;
 
-
-    private void Start()
+    private void Awake()
     {
         // Set initial values
         moveDirection = Vector2.zero;
-        fireInterval = 0;
-        shootType = 0;
         isZen = false;
+        shootType = 0;
+        fireInterval = 0;
+        health = 4;
+        power = 0;
+    }
 
+
+    private void Start()
+    {
         CalculateCameraBoundaries();
     }
 
@@ -41,6 +50,12 @@ public class PlayerController : MonoBehaviour
         Debug.DrawLine(gameObject.transform.position, new Vector2(
             gameObject.transform.position.x,
             gameObject.transform.position.y) + moveDirection, Color.red);
+
+        // Reset level on R
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     private void FixedUpdate()
@@ -143,14 +158,7 @@ public class PlayerController : MonoBehaviour
     
     private void SetShootType()
     {
-        if (isZen)
-        {
-            shootType = 1;
-        }
-        else
-        {
-            shootType = 0;
-        }
+        shootType = (byte) Mathf.Ceil(power / 20);
     }
 
     private void GetInputAndShoot()
@@ -160,10 +168,50 @@ public class PlayerController : MonoBehaviour
             // Reset interval
             fireInterval = fireIntervalTime;
 
-            // Create new bullet and shoot
-            GameObject newBullet = Instantiate(bullet);
-            newBullet.transform.position = gameObject.transform.position;
-            newBullet.GetComponent<PlayerBullet>().SetImage(shootType);
+            // Create new bullet/s and shoot (based on shootType)
+            GameObject[] newBullets = new GameObject[6];
+
+            for (byte i = 0; i < shootType + 1; i++)
+            {
+                newBullets[i] = Instantiate(bullet);
+                newBullets[i].transform.position = gameObject.transform.position;
+                newBullets[i].GetComponent<PlayerBullet>().SetImage(isZen ? 1 : 0);
+            }
+
+            // Transform bullets to make shapes
+            switch (shootType)
+            {
+                case 1:
+                    newBullets[0].transform.Translate(Vector2.left * 0.2f, Space.Self);
+                    newBullets[1].transform.Translate(Vector2.right * 0.2f, Space.Self);
+                    break;
+                case 2:
+                    newBullets[0].transform.Translate(Vector2.left * 0.3f, Space.Self);
+                    newBullets[1].transform.Translate(Vector2.right * 0.3f, Space.Self);
+                    break;
+                case 3:
+                    newBullets[0].transform.Translate(new Vector2(0.2f, 0.2f), Space.Self);
+                    newBullets[1].transform.Translate(new Vector2(0.2f, -0.2f), Space.Self);
+                    newBullets[2].transform.Translate(new Vector2(-0.2f, 0.2f), Space.Self);
+                    newBullets[3].transform.Translate(new Vector2(-0.2f, -0.2f), Space.Self);
+                    break;
+                case 4:
+                    newBullets[0].transform.Translate(new Vector2(0.25f, 0.25f), Space.Self);
+                    newBullets[1].transform.Translate(new Vector2(0.25f, -0.25f), Space.Self);
+                    newBullets[2].transform.Translate(new Vector2(-0.25f, 0.25f), Space.Self);
+                    newBullets[3].transform.Translate(new Vector2(-0.25f, -0.25f), Space.Self);
+                    break;
+                case 5:
+                    newBullets[0].transform.Translate(new Vector2(-0.2f, 0.25f), Space.Self);
+                    newBullets[1].transform.Translate(new Vector2(-0.2f, 0), Space.Self);
+                    newBullets[2].transform.Translate(new Vector2(-0.2f, -0.25f), Space.Self);
+                    newBullets[3].transform.Translate(new Vector2(0.2f, 0.25f), Space.Self);
+                    newBullets[4].transform.Translate(new Vector2(0.2f, 0), Space.Self);
+                    newBullets[5].transform.Translate(new Vector2(0.2f, -0.25f), Space.Self);
+                    break;
+                default:
+                    break;
+            }
         }
 
         // Update interval
@@ -180,6 +228,12 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.position = new Vector2(
             Mathf.Clamp(gameObject.transform.position.x, minX + playerSpriteSize.x / 2, maxX - playerSpriteSize.x / 2),
             Mathf.Clamp(gameObject.transform.position.y, minY + playerSpriteSize.y / 2, maxY - playerSpriteSize.y / 2));
+    }
+
+    public void AddMorePower(byte powerToAdd)
+    {
+        power += powerToAdd;
+        Debug.Log(power);
     }
 
 }
