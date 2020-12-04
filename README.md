@@ -5,3 +5,4 @@
 - Fly using arrow keys
 - Shoot using Z
 - Go into zen mode (or however it's called) by using Shift
+- Restart level using R
