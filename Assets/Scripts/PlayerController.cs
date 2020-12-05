@@ -46,12 +46,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        // Get input
+        GetInputAndSetZen();
+        GetInputAndSetDirection();
+        GetInputAndShoot();
+
         // Draw line from player to moveDirection Vector
         Debug.DrawLine(gameObject.transform.position, new Vector2(
             gameObject.transform.position.x,
             gameObject.transform.position.y) + moveDirection, Color.red);
 
-        // Reset level on R
+        // Restart level on R
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(0);
@@ -60,10 +65,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GetInputAndSetZen();
-        GetInputAndSetDirection();
-        SetShootType();
-        GetInputAndShoot();
         MovePlayer(moveDirection);
     }
 
@@ -91,6 +92,18 @@ public class PlayerController : MonoBehaviour
         maxX = horzExtent;
         minY = -vertExtent;
         maxY = vertExtent;
+    }
+
+    private void GetInputAndSetZen()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            isZen = true;
+        }
+        else
+        {
+            isZen = false;
+        }
     }
 
     private void GetInputAndSetDirection()
@@ -142,23 +155,6 @@ public class PlayerController : MonoBehaviour
         // Slow down if in zen mode
         if (isZen)
             moveDirection *= slowSpeedMultiplier;
-    }
-
-    private void GetInputAndSetZen()
-    {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            isZen = true;
-        }
-        else
-        {
-            isZen = false;
-        }
-    }
-    
-    private void SetShootType()
-    {
-        shootType = (byte) Mathf.Ceil(power / 20);
     }
 
     private void GetInputAndShoot()
@@ -217,6 +213,13 @@ public class PlayerController : MonoBehaviour
         // Update interval
         fireInterval = Mathf.Max(0, fireInterval - Time.deltaTime);
     }
+    
+    private void SetShootType()
+    {
+        shootType = (byte) Mathf.Ceil(power / 20);
+        Debug.Log("Current power: " + power);
+        Debug.Log("Shoot type: " + shootType);
+    }
 
     private void MovePlayer(Vector2 moveDirection)
     {
@@ -233,7 +236,7 @@ public class PlayerController : MonoBehaviour
     public void AddMorePower(byte powerToAdd)
     {
         power += powerToAdd;
-        Debug.Log(power);
+        SetShootType();
     }
 
 }
