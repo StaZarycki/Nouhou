@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 playerSpriteSize;
 
     private bool isZen;
+    private bool isVulnerable;
     private byte shootType;
     private float fireInterval;
 
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
         // Set initial values
         moveDirection = Vector2.zero;
         isZen = false;
+        isVulnerable = true;
         shootType = 0;
         fireInterval = 0;
         health = 4;
@@ -237,6 +239,33 @@ public class PlayerController : MonoBehaviour
     {
         power += powerToAdd;
         SetShootType();
+    }
+
+    public void GainShield()
+    {
+        // TODO: Gain shield
+        StartCoroutine("ShieldTimer");
+    }
+
+    public void TakeDamage(byte damage)
+    {
+        if (isVulnerable)
+        {
+            // Deal damage when is vulnerable
+            // TODO: Make player disappear for a moment and respawn
+            health--;
+            Debug.Log("Damage taken. Health: " + health);
+        }
+    }
+
+
+    private IEnumerator ShieldTimer()
+    {
+        Debug.Log("Start of ShieldTimer()");
+        isVulnerable = false;
+        yield return new WaitForSeconds(5);
+        isVulnerable = true;
+        Debug.Log("Shield lost!");
     }
 
 }
