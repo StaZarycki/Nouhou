@@ -44,6 +44,17 @@ public class PlayerBullet : MonoBehaviour
         Die();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(1);
+            Die();
+        }
+    }
+
+
+
     private void Rotate()
     {
         // Set timer for animation
