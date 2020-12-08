@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         CalculateCameraBoundaries();
+        SetPlayerPositionToCenter();
     }
 
     private void Update()
@@ -76,24 +77,30 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private void SetPlayerPositionToCenter()
+    {
+        transform.position = new Vector2(
+            (minX + maxX) / 2,
+            minY + 1);
+    }
 
     private void CalculateCameraBoundaries()
     {
         // Get player bounds
-        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer playerSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         playerSpriteSize = new Vector2(
-            spriteRenderer.sprite.bounds.size.x,
-            spriteRenderer.sprite.bounds.size.y);
+            playerSpriteRenderer.sprite.bounds.size.x,
+            playerSpriteRenderer.sprite.bounds.size.y);
 
         // Get window bounds
         float vertExtent = Camera.main.orthographicSize;
         float horzExtent = vertExtent * Screen.width / Screen.height;
 
-        // Set max and min
-        minX = -horzExtent;
-        maxX = horzExtent;
-        minY = -vertExtent;
-        maxY = vertExtent;
+        // Set max and min (based on background image size and window resolution)
+        minX = -horzExtent + horzExtent * (32f/640f)*2;
+        maxX = horzExtent - horzExtent * (224f/640f)*2;
+        minY = -vertExtent + vertExtent * (16f/480f)*2;
+        maxY = vertExtent - vertExtent * (16f/480f)*2;
     }
 
     private void GetInputAndSetZen()
@@ -247,7 +254,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("ShieldTimer");
     }
 
-    public void TakeDamage(byte damage)
+    public void TakeDamage()
     {
         if (isVulnerable)
         {
