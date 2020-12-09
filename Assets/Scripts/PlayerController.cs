@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public Animator playerAnimator;
     public GameObject bullet;
+    public GameObject gameManagerObject;
 
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float slowSpeedMultiplier = 0.5f;
@@ -14,13 +15,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveDirection;
     private Vector2 playerSpriteSize;
+    private GameManager gameManager;
 
     private bool isZen;
     private bool isVulnerable;
     private byte shootType;
     private float fireInterval;
-
-    private byte health;
     private byte power;
 
     private float minX;
@@ -28,16 +28,17 @@ public class PlayerController : MonoBehaviour
     private float maxX;
     private float maxY;
 
+
     private void Awake()
     {
         // Set initial values
         moveDirection = Vector2.zero;
+        gameManager = gameManagerObject.GetComponent<GameManager>();
         isZen = false;
         isVulnerable = true;
         shootType = 0;
         fireInterval = 0;
-        health = 4;
-        power = 0;
+        power = 4;
     }
 
 
@@ -260,9 +261,13 @@ public class PlayerController : MonoBehaviour
         {
             // Deal damage when is vulnerable
             // TODO: Make player disappear for a moment and respawn
-            health--;
-            Debug.Log("Damage taken. Health: " + health);
+            gameManager.UpdateHealth((byte) (gameManager.playerHealth - 1));
         }
+    }
+
+    public byte GetPower()
+    {
+        return power;
     }
 
 
