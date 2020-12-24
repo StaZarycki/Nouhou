@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private Vector2 destination;
+
     [SerializeField] private byte health = 1;
     [SerializeField] private float speed = 0.1f;
-
-    [SerializeField] private Vector2 destination;
 
     private bool canBeDestroyed;
 
@@ -53,6 +53,11 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
             Die();
+    }
+
+    private void Attack()
+    {
+        // TODO: Attack (duh)
     }
 
     public void TakeDamage(byte damage)

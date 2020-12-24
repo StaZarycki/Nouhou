@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class PlayerBullet : Bullet
 {
     [SerializeField] private Sprite[] bulletSprites = new Sprite[4];
 
     [SerializeField] private float animationSpeed;
-    [SerializeField] private float bulletSpeed;
     
-    private GameObject bullet;
     private Transform bulletTransform;
     private SpriteRenderer spriteRenderer;
 
@@ -19,13 +17,8 @@ public class PlayerBullet : MonoBehaviour
     private void Awake()
     {
         // Set initial values
-        bullet = gameObject;
-        spriteRenderer = bullet.GetComponent<SpriteRenderer>();
-        bulletTransform = bullet.GetComponent<Transform>();
-    }
-
-    private void Start()
-    {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        bulletTransform = gameObject.GetComponent<Transform>();
         animationTimer = 0;
     }
 
@@ -36,7 +29,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        Move(Vector2.up);
     }
 
     private void OnBecameInvisible()
@@ -44,7 +37,7 @@ public class PlayerBullet : MonoBehaviour
         Die();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
@@ -52,7 +45,6 @@ public class PlayerBullet : MonoBehaviour
             Die();
         }
     }
-
 
 
     private void Rotate()
@@ -65,16 +57,6 @@ public class PlayerBullet : MonoBehaviour
             bulletTransform.Rotate(new Vector3(0, 0, -10));
             animationTimer = 0;
         }
-    }
-
-    private void Move()
-    {
-        bulletTransform.Translate(Vector2.up * bulletSpeed * Time.deltaTime, Space.World);
-    }
-
-    private void Die()
-    {
-        Destroy(this.gameObject);
     }
 
     public void SetImage(int spriteIndex)
