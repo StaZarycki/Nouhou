@@ -4,23 +4,41 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Vector2 destination;
-
     [SerializeField] private byte health = 1;
-    [SerializeField] private float speed = 0.1f;
+    [SerializeField] private Destination[] destinations;
 
+    private short destinationIndex = 0;
     private bool canBeDestroyed;
+    private Destination currentDestination;
 
 
     private void Awake()
     {
         // Set initial values
         canBeDestroyed = false;
+        currentDestination = destinations[destinationIndex];
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(transform.position, currentDestination.position) < currentDestination.Tolerance)
+        {
+            if (destinations.Length > destinationIndex + 1)
+            {
+                destinationIndex += 1;
+                currentDestination = destinations[destinationIndex];
+            }
+            else
+            {
+                destinationIndex = 0;
+                currentDestination = destinations[destinationIndex];
+            }
+        }
     }
 
     private void FixedUpdate()
     {
-        MoveToDestination();
+        MoveToDestination(currentDestination.position, currentDestination.speed);
     }
 
     private void OnBecameVisible()
@@ -36,12 +54,12 @@ public class Enemy : MonoBehaviour
 
 
 
-    private void MoveToDestination()
+    private void MoveToDestination(Vector3 destination, float speed)
     {
         transform.position = Vector3.MoveTowards(
             transform.position,
             destination,
-            speed * Mathf.Abs(transform.position.magnitude - destination.magnitude));
+            speed * Vector3.Distance(transform.position, destination));
     }
 
     private void Die()
