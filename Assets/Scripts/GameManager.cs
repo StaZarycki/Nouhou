@@ -38,17 +38,17 @@ public class GameManager : MonoBehaviour
     {
         playerHealth = health;
 
-        // Set game over and return if health is 0
-        if (playerHealth <= 0)
-        {
-            Debug.Log("Game Over!");
-            return;
-        }
-
         // Set all stars to invisible
         foreach(Image star in healthStarsObjects)
         {
             star.enabled = false;
+        }
+
+        // Set game over and return if health is 0
+        if (playerHealth == 0)
+        {
+            Debug.Log("Game Over!");
+            return;
         }
 
         // Set necessary stars to visible

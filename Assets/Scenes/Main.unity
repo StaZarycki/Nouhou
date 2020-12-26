@@ -2902,6 +2902,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 249634633}
     m_Modifications:
     - target: {fileID: 106448364, guid: e92c7e8630caa0a48bc829e27b51ec5c, type: 3}
+      propertyPath: bulletObject
+      value: 
+      objectReference: {fileID: 4805662355293330140, guid: cf07ece7d4cd71d40894efe77f5680e5,
+        type: 3}
+    - target: {fileID: 106448364, guid: e92c7e8630caa0a48bc829e27b51ec5c, type: 3}
       propertyPath: destination.x
       value: -2
       objectReference: {fileID: 0}
@@ -2976,6 +2981,10 @@ PrefabInstance:
     - target: {fileID: 106448364, guid: e92c7e8630caa0a48bc829e27b51ec5c, type: 3}
       propertyPath: destinations.Array.data[1].position.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 106448364, guid: e92c7e8630caa0a48bc829e27b51ec5c, type: 3}
+      propertyPath: destinations.Array.data[0].AttackOnFinish
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6778252484819979736, guid: e92c7e8630caa0a48bc829e27b51ec5c,
         type: 3}

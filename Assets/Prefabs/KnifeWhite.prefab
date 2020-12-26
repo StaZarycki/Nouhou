@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5934387516993648795}
   - component: {fileID: 5775417385373807846}
   - component: {fileID: 4607815029427927006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: KnifeWhite
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1215327001
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7765552382658556062, guid: 15906c78c92d6de478ec5f57d1937edf,
     type: 3}
@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79a55c1e6c5a464090399a535f279b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 10
+  bulletSpeed: 5

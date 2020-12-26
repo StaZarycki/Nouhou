@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private byte health = 1;
+    [SerializeField] private GameObject bulletObject;
     [SerializeField] private Destination[] destinations;
 
     private short destinationIndex = 0;
@@ -23,6 +24,8 @@ public class Enemy : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, currentDestination.Position) < currentDestination.Tolerance)
         {
+            if (currentDestination.AttackOnFinish)
+                Invoke("Attack", 0);
             if (destinations.Length > destinationIndex + 1)
             {
                 destinationIndex += 1;
@@ -75,7 +78,7 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-        // TODO: Attack (duh)
+        Instantiate(bulletObject).transform.position = transform.position;
     }
 
     public void TakeDamage(byte damage)

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -261,7 +262,7 @@ public class PlayerController : MonoBehaviour
         {
             // Deal damage when is vulnerable
             // TODO: Make player disappear for a moment and respawn
-            gameManager.UpdateHealth((byte) (gameManager.playerHealth - 1));
+            gameManager.UpdateHealth(Convert.ToByte(Mathf.Max(gameManager.playerHealth - 1, 0)));
         }
     }
 
