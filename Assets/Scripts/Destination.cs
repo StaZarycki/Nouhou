@@ -6,8 +6,8 @@ using UnityEngine;
 [Serializable]
 public class Destination
 {
-    public Vector3 position;
-    public float speed;
+    public Vector3 Position;
+    [Range(0.1f, 2f)] public float Speed = 0.5f;
     private float tolerance;
 
     private float map(float value, float min, float max, float minMap, float maxMap)
@@ -19,7 +19,7 @@ public class Destination
     {
         get
         {
-            tolerance = map(speed, 0.01f, 0.2f, 0.25f, 0.01f);
+            tolerance = map(Speed, 0.1f, 2f, 0.25f, 0.01f);
             return tolerance;
         }
     }

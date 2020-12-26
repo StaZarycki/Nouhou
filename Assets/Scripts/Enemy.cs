@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, currentDestination.position) < currentDestination.Tolerance)
+        if (Vector3.Distance(transform.position, currentDestination.Position) < currentDestination.Tolerance)
         {
             if (destinations.Length > destinationIndex + 1)
             {
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveToDestination(currentDestination.position, currentDestination.speed);
+        MoveToDestination(currentDestination.Position, currentDestination.Speed);
     }
 
     private void OnBecameVisible()
@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(
             transform.position,
             destination,
-            speed * Vector3.Distance(transform.position, destination));
+            speed * 0.1f * Vector3.Distance(transform.position, destination));
     }
 
     private void Die()
