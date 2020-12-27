@@ -5,7 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private byte health = 1;
+    [SerializeField] private float spawnTime = 1;
     [SerializeField] private GameObject bulletObject;
+    [SerializeField] private GameObject powerUpObject;
     [SerializeField] private Destination[] destinations;
 
     private short destinationIndex = 0;
@@ -20,8 +22,19 @@ public class Enemy : MonoBehaviour
         currentDestination = destinations[destinationIndex];
     }
 
+    private void Start()
+    {
+        // Spawn object at spawnTime
+        gameObject.SetActive(false);
+        Invoke("Spawn", spawnTime);
+    }
+
     private void Update()
     {
+        // Logic for moving to destination from destinations array
+        // First check if distance to current point is less than tolerance
+        // If so, change destination to next target (or to the first one if it's at the end of an array)
+        // Also, invoke Attack if checked
         if (Vector3.Distance(transform.position, currentDestination.Position) < currentDestination.Tolerance)
         {
             if (currentDestination.AttackOnFinish)
@@ -46,16 +59,23 @@ public class Enemy : MonoBehaviour
 
     private void OnBecameVisible()
     {
+        // To keep object unkillable too soon
         canBeDestroyed = true;
     }
 
     private void OnBecameInvisible()
     {
+        // Destroy object if it's away
         if (canBeDestroyed)
-            Die();
+            Destroy(gameObject);
     }
 
 
+
+    private void Spawn()
+    {
+        gameObject.SetActive(true);
+    }
 
     private void MoveToDestination(Vector3 destination, float speed)
     {
@@ -67,13 +87,13 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
-    }
+        float _luckyRoll = Random.Range(0f, 1f);
 
-    private void UpdateHealth()
-    {
-        if (health <= 0)
-            Die();
+        // 30% chance to create power up
+        if (_luckyRoll <= 0.3f)
+            Instantiate(powerUpObject).transform.position = transform.position;
+
+        Destroy(gameObject);
     }
 
     private void Attack()
@@ -81,10 +101,16 @@ public class Enemy : MonoBehaviour
         Instantiate(bulletObject).transform.position = transform.position;
     }
 
+    private void UpdateHealth(byte _health)
+    {
+        health = _health;
+        if (health == 0)
+            Die();
+    }
+
     public void TakeDamage(byte damage)
     {
-        health -= damage;
-        UpdateHealth();
+        UpdateHealth(System.Convert.ToByte(Mathf.Max(health - damage, 0)));
     }
 
 }

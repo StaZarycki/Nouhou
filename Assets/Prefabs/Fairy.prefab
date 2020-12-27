@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6187535751120771737}
   - component: {fileID: 6778252484819979738}
   - component: {fileID: 106448364}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fairy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1129374553
+  m_SortingLayerID: 213903929
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -3222067269529556574, guid: ea5e19940301c704abbe683985590c31,
@@ -166,4 +166,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   bulletObject: {fileID: 0}
+  powerUpObject: {fileID: 0}
   destinations: []
