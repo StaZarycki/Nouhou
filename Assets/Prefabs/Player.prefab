@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1626173237
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1970523942836839889, guid: 895430bc0afd62f439ec6e9a108cd5dd,
     type: 3}
@@ -135,6 +135,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 5278633980336107136}
   bullet: {fileID: 5377980424789867345, guid: d555fa8b1014a6647b7110bdcef9907d, type: 3}
   gameManagerObject: {fileID: 0}
+  shootAudioClip: {fileID: 8300000, guid: b4318645cc93b5144b279e5696b50126, type: 3}
   movementSpeed: 5
   slowSpeedMultiplier: 0.5
   fireIntervalTime: 0.1

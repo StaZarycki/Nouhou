@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     private short destinationIndex = 0;
     private bool canBeDestroyed;
+    private AudioClip deathAudioClip;
     private Destination currentDestination;
 
 
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour
     {
         // Set initial values
         canBeDestroyed = false;
+        deathAudioClip = Resources.Load<AudioClip>("Sounds/enep00");
         currentDestination = destinations[destinationIndex];
     }
 
@@ -93,6 +95,7 @@ public class Enemy : MonoBehaviour
         if (_luckyRoll <= 0.3f)
             Instantiate(powerUpObject).transform.position = transform.position;
 
+        AudioSource.PlayClipAtPoint(deathAudioClip, transform.position);
         Destroy(gameObject);
     }
 

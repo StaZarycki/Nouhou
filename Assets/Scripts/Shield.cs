@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Shield : PickUp
 {
-    public override void OnPlayerPickUp(Collider2D playerCollider)
+    public override void OnPlayerPickUp(Collider2D playerCollider, bool debugMode = false)
     {
-        base.OnPlayerPickUp(playerCollider);
+        base.OnPlayerPickUp(playerCollider, debugMode);
 
         playerCollider.gameObject.GetComponent<PlayerController>().GainShield();
     }

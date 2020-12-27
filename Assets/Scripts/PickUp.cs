@@ -7,6 +7,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] private float maxSpeed;
 
     private Vector2 movement = Vector2.down;
+    private AudioClip pickUpAudioClip;
 
     private float speedGainMultiplier;
     private float animationTime;
@@ -15,6 +16,7 @@ public class PickUp : MonoBehaviour
     private void Awake()
     {
         // Set initial values
+        pickUpAudioClip = Resources.Load<AudioClip>("Sounds/item00");
         speedGainMultiplier = 10;
     }
 
@@ -73,8 +75,11 @@ public class PickUp : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void OnPlayerPickUp(Collider2D playerCollider)
+    public virtual void OnPlayerPickUp(Collider2D playerCollider, bool debugMode = false)
     {
-        Debug.Log(gameObject.name + ": picked up");
+        if (debugMode)
+            Debug.Log(gameObject.name + ": picked up");
+
+        AudioSource.PlayClipAtPoint(pickUpAudioClip, transform.position);
     }
 }

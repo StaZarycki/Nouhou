@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject healthPanelObject;
     [SerializeField] private GameObject bombPanelObject;
     [SerializeField] private GameObject playerObject;
+    [SerializeField] private MusicType currentMusicType;
 
     private Image[] healthStarsObjects;
     private Image[] bombStarsObjects;
     private PlayerController playerController;
+    private AudioSource audioSource;
 
     public byte playerHealth = 4;
     public byte playerBombs = 4;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
         healthStarsObjects = healthPanelObject.GetComponentsInChildren<Image>();
         bombStarsObjects = bombPanelObject.GetComponentsInChildren<Image>();
         playerController = playerObject.GetComponent<PlayerController>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         playerPower = playerController.GetPower();
     }
 
@@ -31,6 +34,9 @@ public class GameManager : MonoBehaviour
     {
         UpdateHealth(playerHealth);
         UpdateBombs(playerBombs);
+
+        audioSource.clip = currentMusicType.music[1];
+        audioSource.PlayDelayed(1);
     }
 
 

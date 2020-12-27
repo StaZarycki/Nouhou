@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveDirection;
     private Vector2 playerSpriteSize;
+    private AudioClip shootAudioClip;
     private GameManager gameManager;
 
     private bool isZen;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         // Set initial values
         moveDirection = Vector2.zero;
         gameManager = gameManagerObject.GetComponent<GameManager>();
+        shootAudioClip = Resources.Load<AudioClip>("Sounds/plst00");
         isZen = false;
         isVulnerable = true;
         shootType = 0;
@@ -174,6 +176,9 @@ public class PlayerController : MonoBehaviour
         {
             // Reset interval
             fireInterval = fireIntervalTime;
+
+            // Play sound
+            AudioSource.PlayClipAtPoint(shootAudioClip, transform.position);
 
             // Create new bullet/s and shoot (based on shootType)
             GameObject[] newBullets = new GameObject[6];
